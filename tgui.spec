@@ -1,3 +1,7 @@
+# TODO:
+# - Why base package wants to install -devel? I didn't manage with this
+# - Generate .so and .la files and add they to the -devel package
+
 Summary:	Allegro GUI toolkit
 Summary(pl.UTF-8):	Zestaw narzędzi GUI używający Allegro
 Name:		tgui

@@ -14,6 +14,7 @@ Source0:	http://trent.gamblin.ca/tgui/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-Makefile.patch
 URL:		http://trent.gamblin.ca/tgui/
 BuildRequires:	allegro-devel
+BuildRequires:	libstdc++-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -33,6 +34,8 @@ Summary:	TGUI header files
 Summary(pl.UTF-8):	Pliki nagłówkowe TGUI
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
+Requires:	allegro-devel
+Requires:	libstdc++-devel
 
 %description devel
 Header files for TGUI.
@@ -41,16 +44,16 @@ Header files for TGUI.
 Pliki nagłówkowe TGUI.
 
 %package static
-Summary:	TGUI static libraries
-Summary(pl.UTF-8):	Biblioteki statyczne TGUI
+Summary:	TGUI static library
+Summary(pl.UTF-8):	Biblioteka statyczna TGUI
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
-TGUI static libraries.
+TGUI static library.
 
 %description static -l pl.UTF-8
-Biblioteki statyczne TGUI.
+Biblioteka statyczna TGUI.
 
 %prep
 %setup -q

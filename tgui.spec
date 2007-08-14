@@ -1,6 +1,3 @@
-# TODO:
-# - Generate .so and .la files and add they to the -devel package
-
 Summary:	Allegro GUI toolkit
 Summary(pl.UTF-8):	Zestaw narzędzi GUI używający Allegro
 Name:		tgui
@@ -63,12 +60,16 @@ Biblioteka statyczna TGUI.
 	CXX="%{__cxx}" \
 	FLAGS="%{rpmcxxflags}"
 
+%{__cxx} -shared %{name}.o -o libtgui.so
+
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_includedir},%{_libdir}}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+install libtgui.so $RPM_BUILD_ROOT%{_libdir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -79,6 +80,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/libtgui.so
 %{_includedir}/TGUI
 
 %files static

@@ -56,7 +56,7 @@ Biblioteka statyczna TGUI.
 %patch0 -p1
 
 %build
-%{__make} \
+%{__make} -j1 \
 	CXX="%{__cxx}" \
 	FLAGS="%{rpmcxxflags}"
 

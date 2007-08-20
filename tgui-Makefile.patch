@@ -1,5 +1,5 @@
---- tgui-0.9/Makefile~	2007-08-18 20:11:16.000000000 +0200
-+++ tgui-0.9/Makefile	2007-08-18 20:11:15.000000000 +0200
+--- tgui-0.9/Makefile~	2007-08-20 23:23:02.487834895 +0200
++++ tgui-0.9/Makefile	2007-08-20 23:22:26.957632152 +0200
 @@ -1,6 +1,8 @@
 -PREFIX=/usr/local
 +PREFIX=/usr
@@ -31,7 +31,7 @@
 -	cp -R TGUI $(PREFIX)/include
 -	cp -R libtgui.a /usr/local/lib
 +	cp -R TGUI $(DESTDIR)$(PREFIX)/include
-+	cp -R libtgui.a $(DESTDIR)/usr/lib
++	cp -R libtgui.a $(DESTDIR)$(LIBDIR)
 +	cp -R awexamp $(DESTDIR)/usr/bin
  
  clean:

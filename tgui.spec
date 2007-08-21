@@ -2,7 +2,7 @@ Summary:	Allegro GUI toolkit
 Summary(pl.UTF-8):	Zestaw narzędzi GUI używający Allegro
 Name:		tgui
 Version:	0.9
-Release:	0.1
+Release:	1
 License:	MIT
 Group:		Development/Tools
 Source0:	http://trent.gamblin.ca/tgui/%{name}-%{version}.tar.bz2

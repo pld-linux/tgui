@@ -11,6 +11,7 @@ Patch0:		%{name}-Makefile.patch
 URL:		http://trent.gamblin.ca/tgui/
 BuildRequires:	allegro-devel
 BuildRequires:	libstdc++-devel
+BuildRequires:	rpmbuild(macros) >= 1.167
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -61,8 +62,8 @@ Biblioteka statyczna TGUI.
 	FLAGS="%{rpmcxxflags}" \
 	LDFLAGS="%{rpmldflags}"
 
-%{__cxx} %{rpmcflags} -fPIC -c tgui.cpp
-%{__cxx} %{rpmldflags} %{rpmcflags} -shared tgui.o -o libtgui.so `allegro-config --libs`
+%{__cxx} %{rpmcxxflags} -fPIC -c tgui.cpp
+%{__cxx} %{rpmldflags} %{rpmcxxflags} -shared tgui.o -o libtgui.so `allegro-config --libs`
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -80,10 +81,10 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/*
+%attr(755,root,root) %{_libdir}/libtgui.so
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libtgui.so
 %{_includedir}/TGUI
 
 %files static

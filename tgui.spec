@@ -61,8 +61,8 @@ Biblioteka statyczna TGUI.
 	FLAGS="%{rpmcxxflags}" \
 	LDFLAGS="%{rpmldflags}"
 
-%{__cxx} -fPIC -c tgui.cpp
-%{__cxx} -shared tgui.o -o libtgui.so `allegro-config --libs`
+%{__cxx} %{rpmcflags} -fPIC -c tgui.cpp
+%{__cxx} %{rpmldflags} %{rpmcflags} -shared tgui.o -o libtgui.so `allegro-config --libs`
 
 %install
 rm -rf $RPM_BUILD_ROOT

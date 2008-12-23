@@ -8,6 +8,7 @@ Group:		Development/Tools
 Source0:	http://trent.gamblin.ca/tgui/%{name}-%{version}.tar.bz2
 # Source0-md5:	89d9653c1e732a2a4324cc986f8892e8
 Patch0:		%{name}-Makefile.patch
+Patch1:		%{name}-stdio.patch
 URL:		http://trent.gamblin.ca/tgui/
 BuildRequires:	allegro-devel
 BuildRequires:	libstdc++-devel
@@ -55,6 +56,7 @@ Biblioteka statyczna TGUI.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 %{__make} -j1 \
